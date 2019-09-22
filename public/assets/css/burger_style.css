@@ -4,3 +4,72 @@ html, body {
 h1 {
     color: #dd1021;
 }
+input {
+    height: 50px;
+    width: 450px;
+}
+button {
+    background-color: #dd1021;
+    border-color: #27251F;
+    color: #ffc300;
+    padding: 8px;
+}
+img {
+    width: 25%;
+}
+.container {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: 350px, auto, auto;
+    grid-row-gap: 15px;
+    grid-template-areas: 
+        "header header header header header"
+        ". list . eaten ."
+        ". input input input .";
+}
+
+.heading-container {
+    grid-area: header;
+    display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.waiting {
+    grid-area: list;
+    display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 15px;
+  background-color: #4d4738;
+  border: 2px solid #27251F;
+  color: white;
+}
+
+.eaten {
+    grid-area: eaten;
+    display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 15px;
+  background-color: #4d4738;
+  border: 2px solid #27251F;
+  color: rgb(153, 153, 153);
+}
+
+.input {
+    grid-area: input;
+    display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.submit-button {
+    padding: 20px;
+    font-size: 28px;
+    margin-top: 10px;
+}

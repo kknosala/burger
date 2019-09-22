@@ -4,6 +4,7 @@
         <h1>Eat Da Burger!</h1>
     </div>
     <div class="waiting">
+        <h3>Burgers Ready to Eat!</h3>
             <table>
                 {{#each burgers}}
                     {{#unless devoured}}
@@ -16,6 +17,7 @@
             </table>
     </div>
     <div class="eaten">
+        <h3>Burgers Eaten</h3>
         <table>
                 {{#each burgers}}
                     {{#if devoured}}
@@ -29,7 +31,7 @@
     <div class="input">
         <form>
             <input type="text" name="burger"><br>
-            <button type="submit">Add My Burger!</button>
+            <button class="submit-button" type="submit">Add My Burger!</button>
         </form>
     </div>
 </div>

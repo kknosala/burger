@@ -8,7 +8,22 @@ $(document).ready(function() {
             data: newBurger
         }).then(function() {
             console.log('added new burger');
-            location.reload();
+            location.reload(true);
         })
-    })
+    });
+
+    $('.eatThis').on('click', function(event) {
+        var id = this.value;
+        var updateBurger = {
+            devoured: 1
+        }
+
+        $.ajax('/api/burgers/' + id, {
+            type: 'PUT',
+            data: updateBurger
+        }).then(function() {
+            console.log('changed devoured to true');
+            location.reload(true);
+        })
+    });
 })

@@ -9,19 +9,19 @@ var orm = {
         })
     },
 
-    insertOne: function(tableName, burgerName) {
+    insertOne: function(tableName, burgerName, cb) {
         var queryString = 'INSERT INTO ?? (burger_name) VALUES (?)';
         connection.query(queryString, [tableName, burgerName], function(err, result) {
             if (err) throw err;
-            console.log(result);
+            cb(result);
         })
     },
 
-    updateOne: function(tableName, devoureUpdate, id) {
-        var queryString = 'UPDATE ?? SET devoured = ? HWERE id = ?';
+    updateOne: function(tableName, devoureUpdate, id, cb) {
+        var queryString = 'UPDATE ?? SET devoured = ? WHERE id = ?';
         connection.query(queryString, [tableName, devoureUpdate, id], function(err, result) {
             if (err) throw err;
-            console.log(result);
+            cb(result);
         })
     }
     

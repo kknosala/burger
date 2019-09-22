@@ -4,24 +4,32 @@
         <h1>Eat Da Burger!</h1>
     </div>
     <div class="waiting">
-        <table>
             <table>
                 {{#each burgers}}
-                <tr>
-                    <td>{{burger_name}}</td>
-                    <td><button value={{id}}>Eat this burger!</button></td>
-                </tr>
+                    {{#unless devoured}}
+                        <tr>
+                            <td>{{burger_name}}</td>
+                            <td><button value={{id}}>Eat this burger!</button></td>
+                        </tr>
+                    {{/unless}}
                 {{/each}}
             </table>
-        </table>
     </div>
     <div class="eaten">
-
+        <table>
+                {{#each burgers}}
+                    {{#if devoured}}
+                        <tr>
+                            <td>{{burger_name}}</td>
+                        </tr>
+                    {{/if}}
+                {{/each}}
+            </table>
     </div>
     <div class="input">
         <form>
             <input type="text"><br>
-            <button>Add My Burger!</button>
+            <button type="submit">Add My Burger!</button>
         </form>
     </div>
 </div>
